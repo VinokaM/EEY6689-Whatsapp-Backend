@@ -7,7 +7,7 @@ CORS(app)
 @app.route("/")
 def home():
     return jsonify({
-        "message": "Backend is running bro"
+        "message": "Backend is running bro."
     })
 
 
