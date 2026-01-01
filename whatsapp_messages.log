@@ -8,3 +8,10 @@
 2026-01-01 20:48:13,846 - werkzeug - INFO -  * Restarting with stat
 2026-01-01 20:48:15,036 - werkzeug - WARNING -  * Debugger is active!
 2026-01-01 20:48:15,044 - werkzeug - INFO -  * Debugger PIN: 145-983-703
+2026-01-01 20:54:17,745 - whatsapp_service - INFO - Sending text message to 94710958550
+2026-01-01 20:54:17,745 - whatsapp_service - INFO - [ATTEMPT 1] Sending message to 94710958550
+2026-01-01 20:54:19,592 - whatsapp_service - INFO - [SUCCESS] Text message sent successfully to 94710958550 on attempt 1
+2026-01-01 20:54:19,596 - werkzeug - INFO - 127.0.0.1 - - [01/Jan/2026 20:54:19] "POST /chat HTTP/1.1" 200 -
+2026-01-01 20:54:21,236 - werkzeug - INFO - 127.0.0.1 - - [01/Jan/2026 20:54:21] "POST /chat HTTP/1.1" 200 -
+2026-01-01 20:54:21,266 - werkzeug - INFO - 127.0.0.1 - - [01/Jan/2026 20:54:21] "POST /chat HTTP/1.1" 200 -
+2026-01-01 20:54:21,359 - werkzeug - INFO - 127.0.0.1 - - [01/Jan/2026 20:54:21] "POST /chat HTTP/1.1" 200 -
