@@ -1,0 +1,10 @@
+2026-01-01 20:47:06,648 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-01-01 20:47:06,648 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-01-01 20:47:06,659 - werkzeug - INFO -  * Restarting with stat
+2026-01-01 20:47:07,523 - werkzeug - WARNING -  * Debugger is active!
+2026-01-01 20:47:07,531 - werkzeug - INFO -  * Debugger PIN: 145-983-703
+2026-01-01 20:48:13,753 - werkzeug - INFO -  * Detected change in 'F:\\Level 6\\GroupProject\\Backend\\app.py', reloading
+2026-01-01 20:48:13,846 - werkzeug - INFO -  * Restarting with stat
+2026-01-01 20:48:15,036 - werkzeug - WARNING -  * Debugger is active!
+2026-01-01 20:48:15,044 - werkzeug - INFO -  * Debugger PIN: 145-983-703
