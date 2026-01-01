@@ -25,7 +25,6 @@ def verify():
 @app.route("/chat", methods=["POST"])
 def chat():
     incoming_data = request.json
-    print("message recived")
 
     try:
         changes = incoming_data["entry"][0]["changes"][0]["value"]
