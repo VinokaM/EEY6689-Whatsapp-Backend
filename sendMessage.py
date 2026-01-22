@@ -55,7 +55,7 @@ def send_whatsapp_message(phone, message, max_retries=2, retry_delay=2):
                 f"https://graph.facebook.com/v16.0/{WHATSAPP_PHONE_ID}/messages",
                 headers=headers,
                 json=payload,
-                timeout=15  # Increased timeout for better reliability
+                timeout=15  
             )
             
             resp.raise_for_status()
