@@ -87,7 +87,7 @@ def send_whatsapp_message(phone, message, max_retries=2, retry_delay=2):
         
         # If this wasn't the last attempt, wait before retrying
         if attempt < max_retries:
-            # Progressive backoff: increase delay with each retry
+            
             wait_time = retry_delay * (attempt + 1)
             logger.info(f"[RETRY] Waiting {wait_time}s before retry attempt {attempt + 2}...")
             time.sleep(wait_time)
