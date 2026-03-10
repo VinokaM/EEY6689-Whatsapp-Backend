@@ -15,3 +15,42 @@
 2026-01-01 20:54:21,236 - werkzeug - INFO - 127.0.0.1 - - [01/Jan/2026 20:54:21] "POST /chat HTTP/1.1" 200 -
 2026-01-01 20:54:21,266 - werkzeug - INFO - 127.0.0.1 - - [01/Jan/2026 20:54:21] "POST /chat HTTP/1.1" 200 -
 2026-01-01 20:54:21,359 - werkzeug - INFO - 127.0.0.1 - - [01/Jan/2026 20:54:21] "POST /chat HTTP/1.1" 200 -
+2026-03-10 19:50:01,309 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-10 19:50:01,312 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-10 19:50:01,322 - werkzeug - INFO -  * Restarting with stat
+2026-03-10 19:50:02,746 - werkzeug - WARNING -  * Debugger is active!
+2026-03-10 19:50:02,754 - werkzeug - INFO -  * Debugger PIN: 145-983-703
+2026-03-10 19:50:23,647 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2026 19:50:23] "GET /?hub.mode=subscribe&hub.challenge=1014880087&hub.verify_token=Vinopoor1214&hub_mode=subscribe&hub_challenge=1014880087&hub_verify_token=Vinopoor1214 HTTP/1.1" 200 -
+2026-03-10 19:51:02,021 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2026 19:51:02] "GET /chat?hub.mode=subscribe&hub.challenge=232950157&hub.verify_token=Vinopoor1214&hub_mode=subscribe&hub_challenge=232950157&hub_verify_token=Vinopoor1214 HTTP/1.1" 200 -
+2026-03-10 20:00:46,789 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2026 20:00:46] "GET /chat?hub.mode=subscribe&hub.challenge=1061536531&hub.verify_token=Vinopoor1214&hub_mode=subscribe&hub_challenge=1061536531&hub_verify_token=Vinopoor1214 HTTP/1.1" 200 -
+2026-03-10 20:01:16,958 - whatsapp_service - INFO - Sending text message to 94710958550
+2026-03-10 20:01:16,959 - whatsapp_service - INFO - [ATTEMPT 1] Sending message to 94710958550
+2026-03-10 20:01:19,428 - whatsapp_service - INFO - [SUCCESS] Text message sent successfully to 94710958550 on attempt 1
+2026-03-10 20:01:19,430 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2026 20:01:19] "POST /chat HTTP/1.1" 200 -
+2026-03-10 20:01:20,720 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2026 20:01:20] "POST /chat HTTP/1.1" 200 -
+2026-03-10 20:01:20,946 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2026 20:01:20] "POST /chat HTTP/1.1" 200 -
+2026-03-10 20:01:28,769 - whatsapp_service - INFO - Sending text message to 94710958550
+2026-03-10 20:01:28,769 - whatsapp_service - INFO - [ATTEMPT 1] Sending message to 94710958550
+2026-03-10 20:01:31,153 - whatsapp_service - INFO - [SUCCESS] Text message sent successfully to 94710958550 on attempt 1
+2026-03-10 20:01:31,161 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2026 20:01:31] "POST /chat HTTP/1.1" 200 -
+2026-03-10 20:01:32,351 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2026 20:01:32] "POST /chat HTTP/1.1" 200 -
+2026-03-10 20:01:33,054 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2026 20:01:33] "POST /chat HTTP/1.1" 200 -
+2026-03-10 20:04:54,655 - whatsapp_service - INFO - Sending text message to 94710958550
+2026-03-10 20:04:54,656 - whatsapp_service - INFO - [ATTEMPT 1] Sending message to 94710958550
+2026-03-10 20:04:56,687 - whatsapp_service - INFO - [SUCCESS] Text message sent successfully to 94710958550 on attempt 1
+2026-03-10 20:04:56,702 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2026 20:04:56] "POST /chat HTTP/1.1" 200 -
+2026-03-10 20:04:58,157 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2026 20:04:58] "POST /chat HTTP/1.1" 200 -
+2026-03-10 20:05:03,312 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2026 20:05:03] "POST /chat HTTP/1.1" 200 -
+2026-03-10 20:21:47,654 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-10 20:21:47,662 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-10 20:21:47,674 - werkzeug - INFO -  * Restarting with stat
+2026-03-10 20:21:49,274 - werkzeug - WARNING -  * Debugger is active!
+2026-03-10 20:21:49,282 - werkzeug - INFO -  * Debugger PIN: 145-983-703
+2026-03-10 20:22:03,517 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2026 20:22:03] "POST /chat HTTP/1.1" 200 -
+2026-03-10 20:22:07,586 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2026 20:22:07] "[35m[1mPOST /chat HTTP/1.1[0m" 500 -
+2026-03-10 20:22:08,698 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2026 20:22:08] "[35m[1mPOST /chat HTTP/1.1[0m" 500 -
+2026-03-10 20:22:09,829 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2026 20:22:09] "[35m[1mPOST /chat HTTP/1.1[0m" 500 -
+2026-03-10 20:22:11,677 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2026 20:22:11] "[35m[1mPOST /chat HTTP/1.1[0m" 500 -
+2026-03-10 20:22:33,000 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2026 20:22:33] "[35m[1mPOST /chat HTTP/1.1[0m" 500 -

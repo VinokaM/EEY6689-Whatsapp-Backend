@@ -5,6 +5,7 @@ import os
 from dotenv import load_dotenv
 
 from sendMessage import send_whatsapp_message
+from llama_ai.llama_service import get_llama_response
 
 load_dotenv()
 
@@ -44,9 +45,10 @@ def chat():
     print(f"User Messge Received from webhook : {user_message}")
 
 
-    reply = "hi from meta"
+    # reply = "hi from meta"
+    bot_reply = get_llama_response(user_message)
 
-    return send_whatsapp_message(phone_number, reply)
+    return send_whatsapp_message(phone_number, bot_reply)
 
 
 @app.route("/")
