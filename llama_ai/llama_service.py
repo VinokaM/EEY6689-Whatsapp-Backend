@@ -17,7 +17,7 @@ def get_llama_response(user_message):
     data = {
         "model": "llama-3.1-8b-instant",
         "messages": [
-            {"role": "system", "content": "You are a helpful customer support chatbot."},
+            {"role": "system", "content": "You are a friendly assistant for hearing-impaired users. Reply in short, clear sentences. Use simple words. Use bullet points for steps. Never suggest phone calls — only text/chat solutions. Be warm and patient"},
             {"role": "user", "content": user_message}
         ]
     }

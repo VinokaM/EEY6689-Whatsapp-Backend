@@ -66,3 +66,21 @@
 2026-03-10 20:23:57,500 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2026 20:23:57] "POST /chat HTTP/1.1" 200 -
 2026-03-10 20:23:58,579 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2026 20:23:58] "POST /chat HTTP/1.1" 200 -
 2026-03-10 20:23:59,292 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2026 20:23:59] "POST /chat HTTP/1.1" 200 -
+2026-03-10 20:26:12,026 - whatsapp_service - INFO - Sending text message to 94710958550
+2026-03-10 20:26:12,026 - whatsapp_service - INFO - [ATTEMPT 1] Sending message to 94710958550
+2026-03-10 20:26:13,821 - whatsapp_service - INFO - [SUCCESS] Text message sent successfully to 94710958550 on attempt 1
+2026-03-10 20:26:13,827 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2026 20:26:13] "POST /chat HTTP/1.1" 200 -
+2026-03-10 20:26:15,125 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2026 20:26:15] "POST /chat HTTP/1.1" 200 -
+2026-03-10 20:26:15,416 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2026 20:26:15] "POST /chat HTTP/1.1" 200 -
+2026-03-10 20:30:24,298 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2026 20:30:24] "POST /chat HTTP/1.1" 200 -
+2026-03-10 20:34:07,494 - werkzeug - INFO -  * Detected change in 'F:\\Level 6\\GroupProject\\Backend\\llama_ai\\llama_service.py', reloading
+2026-03-10 20:34:07,712 - werkzeug - INFO -  * Restarting with stat
+2026-03-10 20:34:12,066 - werkzeug - WARNING -  * Debugger is active!
+2026-03-10 20:34:12,072 - werkzeug - INFO -  * Debugger PIN: 145-983-703
+2026-03-10 20:35:20,311 - whatsapp_service - INFO - Sending text message to 94710958550
+2026-03-10 20:35:20,312 - whatsapp_service - INFO - [ATTEMPT 1] Sending message to 94710958550
+2026-03-10 20:35:22,073 - whatsapp_service - INFO - [SUCCESS] Text message sent successfully to 94710958550 on attempt 1
+2026-03-10 20:35:22,085 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2026 20:35:22] "POST /chat HTTP/1.1" 200 -
+2026-03-10 20:35:23,507 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2026 20:35:23] "POST /chat HTTP/1.1" 200 -
+2026-03-10 20:35:23,777 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2026 20:35:23] "POST /chat HTTP/1.1" 200 -
+2026-03-10 20:35:23,900 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2026 20:35:23] "POST /chat HTTP/1.1" 200 -
