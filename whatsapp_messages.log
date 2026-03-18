@@ -84,3 +84,104 @@
 2026-03-10 20:35:23,507 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2026 20:35:23] "POST /chat HTTP/1.1" 200 -
 2026-03-10 20:35:23,777 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2026 20:35:23] "POST /chat HTTP/1.1" 200 -
 2026-03-10 20:35:23,900 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2026 20:35:23] "POST /chat HTTP/1.1" 200 -
+2026-03-17 10:33:21,607 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-17 10:33:21,617 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-17 10:33:21,625 - werkzeug - INFO -  * Restarting with stat
+2026-03-17 10:33:36,473 - werkzeug - WARNING -  * Debugger is active!
+2026-03-17 10:33:36,488 - werkzeug - INFO -  * Debugger PIN: 145-983-703
+2026-03-17 10:33:54,152 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2026 10:33:54] "GET /chat?hub.mode=subscribe&hub.challenge=1451738605&hub.verify_token=Vinopoor1214&hub_mode=subscribe&hub_challenge=1451738605&hub_verify_token=Vinopoor1214 HTTP/1.1" 200 -
+2026-03-17 10:34:16,220 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2026 10:34:16] "POST /chat HTTP/1.1" 200 -
+2026-03-17 10:34:23,746 - whatsapp_service - INFO - Sending text message to 94710958550
+2026-03-17 10:34:23,752 - whatsapp_service - INFO - [ATTEMPT 1] Sending message to 94710958550
+2026-03-17 10:34:26,224 - whatsapp_service - INFO - [SUCCESS] Text message sent successfully to 94710958550 on attempt 1
+2026-03-17 10:34:26,232 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2026 10:34:26] "POST /chat HTTP/1.1" 200 -
+2026-03-17 10:34:27,358 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2026 10:34:27] "POST /chat HTTP/1.1" 200 -
+2026-03-17 10:34:29,212 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2026 10:34:29] "POST /chat HTTP/1.1" 200 -
+2026-03-17 10:35:05,040 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2026 10:35:05] "POST /chat HTTP/1.1" 200 -
+2026-03-17 10:37:43,631 - werkzeug - INFO -  * Detected change in 'F:\\Level 6\\GroupProject\\Backend\\app.py', reloading
+2026-03-17 10:37:45,565 - werkzeug - INFO -  * Restarting with stat
+2026-03-17 10:38:03,731 - werkzeug - WARNING -  * Debugger is active!
+2026-03-17 10:38:03,739 - werkzeug - INFO -  * Debugger PIN: 145-983-703
+2026-03-17 10:39:00,445 - whatsapp_service - INFO - Sending text message to 94710958550
+2026-03-17 10:39:00,445 - whatsapp_service - INFO - [ATTEMPT 1] Sending message to 94710958550
+2026-03-17 10:39:01,986 - whatsapp_service - INFO - [SUCCESS] Text message sent successfully to 94710958550 on attempt 1
+2026-03-17 10:39:01,999 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2026 10:39:01] "POST /chat HTTP/1.1" 200 -
+2026-03-17 10:39:03,179 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2026 10:39:03] "POST /chat HTTP/1.1" 200 -
+2026-03-17 10:39:04,018 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2026 10:39:04] "POST /chat HTTP/1.1" 200 -
+2026-03-17 10:56:38,246 - werkzeug - INFO -  * Detected change in 'F:\\Level 6\\GroupProject\\Backend\\sign_service\\sign_service.py', reloading
+2026-03-17 10:56:40,273 - werkzeug - INFO -  * Restarting with stat
+2026-03-17 10:59:22,884 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-17 10:59:22,884 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-17 10:59:22,893 - werkzeug - INFO -  * Restarting with stat
+2026-03-17 10:59:25,331 - werkzeug - WARNING -  * Debugger is active!
+2026-03-17 10:59:25,342 - werkzeug - INFO -  * Debugger PIN: 145-983-703
+2026-03-17 10:59:44,378 - whatsapp_service - INFO - Sending text message to 94710958550
+2026-03-17 10:59:44,378 - whatsapp_service - INFO - [ATTEMPT 1] Sending message to 94710958550
+2026-03-17 10:59:46,140 - whatsapp_service - INFO - [SUCCESS] Text message sent successfully to 94710958550 on attempt 1
+2026-03-17 10:59:47,122 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2026 10:59:47] "POST /chat HTTP/1.1" 200 -
+2026-03-17 10:59:47,492 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2026 10:59:47] "POST /chat HTTP/1.1" 200 -
+2026-03-17 10:59:47,869 - whatsapp_service - INFO - Sending text message to 94710958550
+2026-03-17 10:59:47,871 - whatsapp_service - INFO - [ATTEMPT 1] Sending message to 94710958550
+2026-03-17 10:59:49,150 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2026 10:59:49] "POST /chat HTTP/1.1" 200 -
+2026-03-17 10:59:50,165 - whatsapp_service - INFO - [SUCCESS] Text message sent successfully to 94710958550 on attempt 1
+2026-03-17 10:59:50,170 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2026 10:59:50] "POST /chat HTTP/1.1" 200 -
+2026-03-17 10:59:51,111 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2026 10:59:51] "POST /chat HTTP/1.1" 200 -
+2026-03-17 10:59:51,483 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2026 10:59:51] "POST /chat HTTP/1.1" 200 -
+2026-03-17 12:02:16,009 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-17 12:02:16,009 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-17 12:02:16,018 - werkzeug - INFO -  * Restarting with stat
+2026-03-17 12:02:17,660 - werkzeug - WARNING -  * Debugger is active!
+2026-03-17 12:02:17,662 - werkzeug - INFO -  * Debugger PIN: 145-983-703
+2026-03-17 12:02:29,579 - whatsapp_service - INFO - Sending text message to 94710958550
+2026-03-17 12:02:29,580 - whatsapp_service - INFO - [ATTEMPT 1] Sending message to 94710958550
+2026-03-17 12:02:30,764 - whatsapp_service - WARNING - [REQUEST ERROR] Attempt 1 failed: 401 Client Error: Unauthorized for url: https://graph.facebook.com/v16.0/892440310629225/messages
+2026-03-17 12:02:30,766 - whatsapp_service - ERROR - [API ERROR] API error details: {'error': {'message': 'Error validating access token: Session has expired on Monday, 16-Mar-26 23:00:00 PDT. The current time is Monday, 16-Mar-26 23:32:29 PDT.', 'type': 'OAuthException', 'code': 190, 'error_subcode': 463, 'fbtrace_id': 'Aw_7kYrhzkxIRx-sjcdiScb'}}
+2026-03-17 12:02:30,766 - whatsapp_service - INFO - [RETRY] Waiting 2s before retry attempt 2...
+2026-03-17 12:02:32,768 - whatsapp_service - INFO - [ATTEMPT 2] Sending message to 94710958550
+2026-03-17 12:02:33,725 - whatsapp_service - WARNING - [REQUEST ERROR] Attempt 2 failed: 401 Client Error: Unauthorized for url: https://graph.facebook.com/v16.0/892440310629225/messages
+2026-03-17 12:02:33,725 - whatsapp_service - ERROR - [API ERROR] API error details: {'error': {'message': 'Error validating access token: Session has expired on Monday, 16-Mar-26 23:00:00 PDT. The current time is Monday, 16-Mar-26 23:32:32 PDT.', 'type': 'OAuthException', 'code': 190, 'error_subcode': 463, 'fbtrace_id': 'ADMArcg3bxJP30ISETCDePU'}}
+2026-03-17 12:02:33,727 - whatsapp_service - INFO - [RETRY] Waiting 4s before retry attempt 3...
+2026-03-17 12:02:37,727 - whatsapp_service - INFO - [ATTEMPT 3] Sending message to 94710958550
+2026-03-17 12:02:38,698 - whatsapp_service - WARNING - [REQUEST ERROR] Attempt 3 failed: 401 Client Error: Unauthorized for url: https://graph.facebook.com/v16.0/892440310629225/messages
+2026-03-17 12:02:38,703 - whatsapp_service - ERROR - [API ERROR] API error details: {'error': {'message': 'Error validating access token: Session has expired on Monday, 16-Mar-26 23:00:00 PDT. The current time is Monday, 16-Mar-26 23:32:37 PDT.', 'type': 'OAuthException', 'code': 190, 'error_subcode': 463, 'fbtrace_id': 'AA88bo1RBhwYWQoCJaSw_Fe'}}
+2026-03-17 12:02:38,706 - whatsapp_service - ERROR - Failed to send WhatsApp message after 3 attempts. Last error: Request error: 401 Client Error: Unauthorized for url: https://graph.facebook.com/v16.0/892440310629225/messages
+2026-03-17 12:02:43,430 - whatsapp_service - INFO - Sending text message to 94710958550
+2026-03-17 12:02:43,430 - whatsapp_service - INFO - [ATTEMPT 1] Sending message to 94710958550
+2026-03-17 12:02:44,353 - whatsapp_service - WARNING - [REQUEST ERROR] Attempt 1 failed: 401 Client Error: Unauthorized for url: https://graph.facebook.com/v16.0/892440310629225/messages
+2026-03-17 12:02:44,354 - whatsapp_service - ERROR - [API ERROR] API error details: {'error': {'message': 'Error validating access token: Session has expired on Monday, 16-Mar-26 23:00:00 PDT. The current time is Monday, 16-Mar-26 23:32:42 PDT.', 'type': 'OAuthException', 'code': 190, 'error_subcode': 463, 'fbtrace_id': 'ARu0Jh1YcQ8_SsmrSYVYm6L'}}
+2026-03-17 12:02:44,355 - whatsapp_service - INFO - [RETRY] Waiting 2s before retry attempt 2...
+2026-03-17 12:02:46,356 - whatsapp_service - INFO - [ATTEMPT 2] Sending message to 94710958550
+2026-03-17 12:02:47,292 - whatsapp_service - WARNING - [REQUEST ERROR] Attempt 2 failed: 401 Client Error: Unauthorized for url: https://graph.facebook.com/v16.0/892440310629225/messages
+2026-03-17 12:02:47,292 - whatsapp_service - ERROR - [API ERROR] API error details: {'error': {'message': 'Error validating access token: Session has expired on Monday, 16-Mar-26 23:00:00 PDT. The current time is Monday, 16-Mar-26 23:32:45 PDT.', 'type': 'OAuthException', 'code': 190, 'error_subcode': 463, 'fbtrace_id': 'AeaKAK8R0qjq6hsKEo0IE73'}}
+2026-03-17 12:02:47,292 - whatsapp_service - INFO - [RETRY] Waiting 4s before retry attempt 3...
+2026-03-17 12:02:51,294 - whatsapp_service - INFO - [ATTEMPT 3] Sending message to 94710958550
+2026-03-17 12:02:52,229 - whatsapp_service - WARNING - [REQUEST ERROR] Attempt 3 failed: 401 Client Error: Unauthorized for url: https://graph.facebook.com/v16.0/892440310629225/messages
+2026-03-17 12:02:52,230 - whatsapp_service - ERROR - [API ERROR] API error details: {'error': {'message': 'Error validating access token: Session has expired on Monday, 16-Mar-26 23:00:00 PDT. The current time is Monday, 16-Mar-26 23:32:50 PDT.', 'type': 'OAuthException', 'code': 190, 'error_subcode': 463, 'fbtrace_id': 'AJbrukanNJWNMWaqdVaidDr'}}
+2026-03-17 12:02:52,231 - whatsapp_service - ERROR - Failed to send WhatsApp message after 3 attempts. Last error: Request error: 401 Client Error: Unauthorized for url: https://graph.facebook.com/v16.0/892440310629225/messages
+2026-03-17 12:02:52,235 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2026 12:02:52] "POST /chat HTTP/1.1" 200 -
+2026-03-17 12:03:33,019 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-17 12:03:33,019 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-17 12:03:33,024 - werkzeug - INFO -  * Restarting with stat
+2026-03-17 12:03:34,608 - werkzeug - WARNING -  * Debugger is active!
+2026-03-17 12:03:34,613 - werkzeug - INFO -  * Debugger PIN: 145-983-703
+2026-03-17 12:03:49,944 - whatsapp_service - INFO - Sending text message to 94710958550
+2026-03-17 12:03:49,944 - whatsapp_service - INFO - [ATTEMPT 1] Sending message to 94710958550
+2026-03-17 12:03:51,562 - whatsapp_service - INFO - [SUCCESS] Text message sent successfully to 94710958550 on attempt 1
+2026-03-17 12:03:52,386 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2026 12:03:52] "POST /chat HTTP/1.1" 200 -
+2026-03-17 12:03:53,182 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2026 12:03:53] "POST /chat HTTP/1.1" 200 -
+2026-03-17 12:03:54,109 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2026 12:03:54] "POST /chat HTTP/1.1" 200 -
+2026-03-17 12:03:56,229 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2026 12:03:56] "POST /chat HTTP/1.1" 200 -
+2026-03-17 12:03:57,966 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2026 12:03:57] "POST /chat HTTP/1.1" 200 -
+2026-03-17 12:03:59,566 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2026 12:03:59] "POST /chat HTTP/1.1" 200 -
+2026-03-17 12:03:59,970 - whatsapp_service - INFO - Sending text message to 94710958550
+2026-03-17 12:03:59,979 - whatsapp_service - INFO - [ATTEMPT 1] Sending message to 94710958550
+2026-03-17 12:04:00,757 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2026 12:04:00] "POST /chat HTTP/1.1" 200 -
+2026-03-17 12:04:01,837 - whatsapp_service - INFO - [SUCCESS] Text message sent successfully to 94710958550 on attempt 1
+2026-03-17 12:04:01,840 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2026 12:04:01] "POST /chat HTTP/1.1" 200 -
+2026-03-17 12:04:02,736 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2026 12:04:02] "POST /chat HTTP/1.1" 200 -
+2026-03-17 12:04:03,260 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2026 12:04:03] "POST /chat HTTP/1.1" 200 -
+2026-03-17 12:04:03,430 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2026 12:04:03] "POST /chat HTTP/1.1" 200 -
