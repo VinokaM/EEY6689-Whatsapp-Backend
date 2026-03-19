@@ -43,8 +43,8 @@ class TelegramBotSetup:
         
         if not self.bot_token:
             issues.append("TELEGRAM_BOT_TOKEN not found in environment")
-        elif not self.bot_token.startswith("bot"):
-            issues.append("TELEGRAM_BOT_TOKEN should start with 'bot'")
+        # elif not self.bot_token.startswith("bot"):
+        #     issues.append("TELEGRAM_BOT_TOKEN should start with 'bot'")
         
         if not self.webhook_secret:
             issues.append("TELEGRAM_WEBHOOK_SECRET not configured (recommended for security)")
