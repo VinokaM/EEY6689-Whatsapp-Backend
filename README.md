@@ -30,6 +30,12 @@ ngrok http 5000
 
 Copy the HTTPS URL to your `.env` as `BASE_URL`.
 
+## Verify For Telegram:
+
+```bash
+python telegram_setup.py
+```
+
 ## Run the application:
 
 ```bash
@@ -42,11 +48,7 @@ The server will start on [http://localhost:5000](http://localhost:5000).
 
 # Testing
 
-## For Telegram:
 
-```bash
-python telegram_setup.py
-```
 
 This validates config, tests bot connectivity, and sets up webhooks automatically.
 
