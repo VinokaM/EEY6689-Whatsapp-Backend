@@ -67,6 +67,9 @@ class TelegramMessage:
     photo: Optional[List[Dict]] = None
     document: Optional[Dict] = None
     voice: Optional[Dict] = None
+    audio: Optional[Dict] = None  # Attached audio files (MP3, M4A, WAV, etc.)
+    video: Optional[Dict] = None  # Video files
+    video_note: Optional[Dict] = None  # Round video messages
     reply_to_message: Optional[Dict] = None
     entities: Optional[List[Dict]] = None
 
@@ -195,23 +198,48 @@ class TelegramWebhookHandler:
                 photo=message_data.get("photo"),
                 document=message_data.get("document"),
                 voice=message_data.get("voice"),
+                audio=message_data.get("audio"),
+                video=message_data.get("video"),
+                video_note=message_data.get("video_note"),
                 reply_to_message=message_data.get("reply_to_message"),
                 entities=message_data.get("entities")
             )
-            
-            # Determine message type and content
+
+            # Detect if this is a forwarded message
+            # Telegram uses forward_origin (Bot API v7+) or forward_from (older)
+            is_forwarded = (
+                "forward_origin" in message_data or
+                "forward_from" in message_data or
+                "forward_from_chat" in message_data
+            )
+
+            # Determine message type — media types take priority over text/caption
+            # so that voice/audio/video with a caption are still treated as media
             message_type = "text"
             content = message.text or ""
-            
-            if message.photo:
+
+            if message.voice:
+                # In-app recorded voice note (OGG/OPUS) — always transcribe
+                message_type = "voice"
+                content = ""
+            elif message.audio:
+                # Attached audio file (MP3, M4A, WAV, etc.) — always transcribe
+                message_type = "audio"
+                content = message.caption or ""
+            elif message.video:
+                # Video file — transcribe audio track
+                message_type = "video"
+                content = message.caption or ""
+            elif message.video_note:
+                # Round video message — transcribe audio track
+                message_type = "video_note"
+                content = ""
+            elif message.photo:
                 message_type = "photo"
                 content = message.caption or ""
             elif message.document:
                 message_type = "document"
                 content = message.caption or ""
-            elif message.voice:
-                message_type = "voice"
-                content = ""
             
             # Extract bot commands if present
             commands = self._extract_bot_commands(message.text, message.entities)
@@ -231,6 +259,7 @@ class TelegramWebhookHandler:
                 "date": message.date,
                 "commands": commands,
                 "is_bot": user.is_bot,
+                "is_forwarded": is_forwarded,
                 "language_code": user.language_code,
                 "raw_message": message_data
             }
