@@ -119,17 +119,93 @@ def telegram_webhook():
             logger.info(f"Ignoring Telegram update {parsed_update.get('update_id')} - not addressed to bot")
             return jsonify({"status": "ignored", "reason": "Not addressed to bot"}), 200
         
-        # Extract user message
+        # Get chat ID for response
+        chat_id = parsed_update.get("chat_id")
+        user_id = parsed_update.get("user_id")
+        username = parsed_update.get("username", "Unknown")
+        
+        # Check for bot commands first (before extracting user message)
+        commands = parsed_update.get("commands", [])
+        if commands:
+            command = commands[0].get("command", "").lower()
+            
+            logger.info(f"Telegram command received from user {user_id} (@{username}): {command}")
+            
+            # Handle /start command
+            if command == "/start":
+                bot_reply = (
+                    "🎉 *Welcome to EchoTalk Chat Bot!*\n\n"
+                    "I'm here to help you with Hearing Impaired Assistance.\n\n"
+                    "📱 *Download EchoTalk App:*\n"
+                    "Get the full experience on your smartphone!\n"
+                    "[Download from Play Store](https://play.google.com/store/apps/test_url)\n\n"
+                    "💬 *Get Started:*\n"
+                    "Just send me a message and I'll respond!\n\n"
+                    "Need help? Type /help to learn more."
+                )
+                response_result = send_telegram_message(chat_id, bot_reply, parse_mode="Markdown")
+                
+                if response_result.get("success"):
+                    logger.info(f"Sent /start welcome message to chat {chat_id}")
+                    return jsonify({
+                        "status": "success", 
+                        "message": "Welcome message sent",
+                        "message_id": response_result.get("message_id")
+                    }), 200
+                else:
+                    logger.error(f"Failed to send /start message: {response_result.get('error')}")
+                    return jsonify({
+                        "status": "error", 
+                        "message": "Failed to send welcome message",
+                        "error": response_result.get("error")
+                    }), 500
+            
+            # Handle /help command
+            elif command == "/help":
+                bot_reply = (
+                    "ℹ️ *How to Use EchoTalk Bot*\n\n"
+                    "*What I Can Do:*\n"
+                    "• Answer your questions\n"
+                    "• Provide information and assistance\n"
+                    "• Help with hearing impaired accessibility\n\n"
+                    "*How to Chat:*\n"
+                    "1️⃣ Simply type your message and send it\n"
+                    "2️⃣ I'll process your message and respond\n"
+                    "3️⃣ Continue the conversation naturally\n\n"
+                    "*Example Messages:*\n"
+                    "• \"Hello, how are you?\"\n"
+                    "• \"Can you help me with...\"\n"
+                    "• \"Tell me about...\"\n\n"
+                    "*Available Commands:*\n"
+                    "/start - Show welcome message\n"
+                    "/help - Show this help message\n\n"
+                    "📱 *Download the App:*\n"
+                    "[Get EchoTalk on Play Store](https://play.google.com/store/apps/test_url)\n\n"
+                    "Ready to chat? Just send me a message! 💬"
+                )
+                response_result = send_telegram_message(chat_id, bot_reply, parse_mode="Markdown")
+                
+                if response_result.get("success"):
+                    logger.info(f"Sent /help message to chat {chat_id}")
+                    return jsonify({
+                        "status": "success", 
+                        "message": "Help message sent",
+                        "message_id": response_result.get("message_id")
+                    }), 200
+                else:
+                    logger.error(f"Failed to send /help message: {response_result.get('error')}")
+                    return jsonify({
+                        "status": "error", 
+                        "message": "Failed to send help message",
+                        "error": response_result.get("error")
+                    }), 500
+        
+        # Extract user message (for non-command messages)
         user_message = telegram_handler.extract_user_message(parsed_update)
         
         if not user_message:
             logger.info(f"No message content in Telegram update {parsed_update.get('update_id')}")
             return jsonify({"status": "ignored", "reason": "No message content"}), 200
-        
-        # Get chat ID for response
-        chat_id = parsed_update.get("chat_id")
-        user_id = parsed_update.get("user_id")
-        username = parsed_update.get("username", "Unknown")
         
         logger.info(f"Telegram message received from user {user_id} (@{username}): {user_message}")
         
