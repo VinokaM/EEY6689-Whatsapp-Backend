@@ -12,3 +12,4 @@ coverage.xml
 coverage.json
 .pytest_cache/
 test-results.xml
+local_doc
