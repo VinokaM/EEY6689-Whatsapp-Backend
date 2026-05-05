@@ -84,3 +84,89 @@
 2026-03-10 20:35:23,507 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2026 20:35:23] "POST /chat HTTP/1.1" 200 -
 2026-03-10 20:35:23,777 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2026 20:35:23] "POST /chat HTTP/1.1" 200 -
 2026-03-10 20:35:23,900 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2026 20:35:23] "POST /chat HTTP/1.1" 200 -
+2026-05-04 23:06:58,418 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-04 23:06:58,418 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-05-04 23:06:58,423 - werkzeug - INFO -  * Restarting with stat
+2026-05-04 23:07:00,077 - werkzeug - WARNING -  * Debugger is active!
+2026-05-04 23:07:00,080 - werkzeug - INFO -  * Debugger PIN: 145-983-703
+2026-05-04 23:21:00,002 - werkzeug - INFO - 127.0.0.1 - - [04/May/2026 23:21:00] "GET /chat?hub.mode=subscribe&hub.challenge=1074412376&hub.verify_token=Vinopoor1214&hub_mode=subscribe&hub_challenge=1074412376&hub_verify_token=Vinopoor1214 HTTP/1.1" 200 -
+2026-05-04 23:28:10,778 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-04 23:28:10,784 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-05-04 23:28:10,789 - werkzeug - INFO -  * Restarting with stat
+2026-05-04 23:28:12,731 - werkzeug - WARNING -  * Debugger is active!
+2026-05-04 23:28:12,741 - werkzeug - INFO -  * Debugger PIN: 145-983-703
+2026-05-04 23:29:07,253 - werkzeug - INFO - 127.0.0.1 - - [04/May/2026 23:29:07] "GET /chat?hub.mode=subscribe&hub.challenge=311931126&hub.verify_token=Vinopoor1214&hub_mode=subscribe&hub_challenge=311931126&hub_verify_token=Vinopoor1214 HTTP/1.1" 200 -
+2026-05-04 23:35:48,399 - werkzeug - INFO -  * Detected change in 'F:\\Level 6\\GroupProject\\Backend\\app.py', reloading
+2026-05-04 23:35:48,541 - werkzeug - INFO -  * Restarting with stat
+2026-05-04 23:35:50,351 - werkzeug - WARNING -  * Debugger is active!
+2026-05-04 23:35:50,375 - werkzeug - INFO -  * Debugger PIN: 145-983-703
+2026-05-04 23:38:40,772 - werkzeug - INFO -  * Detected change in 'F:\\Level 6\\GroupProject\\Backend\\app.py', reloading
+2026-05-04 23:38:40,907 - werkzeug - INFO -  * Restarting with stat
+2026-05-04 23:38:42,707 - werkzeug - WARNING -  * Debugger is active!
+2026-05-04 23:38:42,712 - werkzeug - INFO -  * Debugger PIN: 145-983-703
+2026-05-04 23:44:08,473 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-04 23:44:08,474 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-05-04 23:44:08,477 - werkzeug - INFO -  * Restarting with stat
+2026-05-04 23:44:09,895 - werkzeug - WARNING -  * Debugger is active!
+2026-05-04 23:44:09,910 - werkzeug - INFO -  * Debugger PIN: 145-983-703
+2026-05-05 21:14:10,608 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-05 21:14:10,627 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-05-05 21:14:10,635 - werkzeug - INFO -  * Restarting with stat
+2026-05-05 21:14:12,536 - werkzeug - WARNING -  * Debugger is active!
+2026-05-05 21:14:12,542 - werkzeug - INFO -  * Debugger PIN: 145-983-703
+2026-05-05 21:15:18,258 - werkzeug - INFO - 127.0.0.1 - - [05/May/2026 21:15:18] "[31m[1mGET /chat?hub.mode=subscribe&hub.challenge=1667649701&hub.verify_token=Vinopoor1214&hub_mode=subscribe&hub_challenge=1667649701&hub_verify_token=Vinopoor1214 HTTP/1.1[0m" 415 -
+2026-05-05 21:16:13,763 - werkzeug - INFO - 127.0.0.1 - - [05/May/2026 21:16:13] "[31m[1mGET /chat?hub.mode=subscribe&hub.challenge=195591085&hub.verify_token=Vinopoor1214&hub_mode=subscribe&hub_challenge=195591085&hub_verify_token=Vinopoor1214 HTTP/1.1[0m" 415 -
+2026-05-05 21:17:27,503 - werkzeug - INFO -  * Detected change in 'F:\\Level 6\\GroupProject\\Backend\\app.py', reloading
+2026-05-05 21:17:27,779 - werkzeug - INFO -  * Restarting with stat
+2026-05-05 21:17:30,019 - werkzeug - WARNING -  * Debugger is active!
+2026-05-05 21:17:30,030 - werkzeug - INFO -  * Debugger PIN: 145-983-703
+2026-05-05 21:17:38,338 - werkzeug - INFO - 127.0.0.1 - - [05/May/2026 21:17:38] "GET /chat?hub.mode=subscribe&hub.challenge=1703388764&hub.verify_token=Vinopoor1214&hub_mode=subscribe&hub_challenge=1703388764&hub_verify_token=Vinopoor1214 HTTP/1.1" 200 -
+2026-05-05 21:37:20,135 - whatsapp_service - INFO - Sending text message to 94710958550
+2026-05-05 21:37:20,135 - whatsapp_service - INFO - [ATTEMPT 1] Sending message to 94710958550
+2026-05-05 21:37:22,398 - whatsapp_service - INFO - [SUCCESS] Text message sent successfully to 94710958550 on attempt 1
+2026-05-05 21:37:22,407 - werkzeug - INFO - 127.0.0.1 - - [05/May/2026 21:37:22] "POST /chat HTTP/1.1" 200 -
+2026-05-05 21:37:23,846 - werkzeug - INFO - 127.0.0.1 - - [05/May/2026 21:37:23] "POST /chat HTTP/1.1" 200 -
+2026-05-05 21:37:24,997 - werkzeug - INFO - 127.0.0.1 - - [05/May/2026 21:37:24] "POST /chat HTTP/1.1" 200 -
+2026-05-05 21:37:25,170 - werkzeug - INFO - 127.0.0.1 - - [05/May/2026 21:37:25] "POST /chat HTTP/1.1" 200 -
+2026-05-05 21:38:57,929 - whatsapp_service - INFO - Sending text message to 94710958550
+2026-05-05 21:38:57,929 - whatsapp_service - INFO - [ATTEMPT 1] Sending message to 94710958550
+2026-05-05 21:39:00,880 - whatsapp_service - INFO - [SUCCESS] Text message sent successfully to 94710958550 on attempt 1
+2026-05-05 21:39:00,880 - werkzeug - INFO - 127.0.0.1 - - [05/May/2026 21:39:00] "POST /chat HTTP/1.1" 200 -
+2026-05-05 21:39:01,953 - werkzeug - INFO - 127.0.0.1 - - [05/May/2026 21:39:01] "POST /chat HTTP/1.1" 200 -
+2026-05-05 21:39:02,549 - werkzeug - INFO - 127.0.0.1 - - [05/May/2026 21:39:02] "POST /chat HTTP/1.1" 200 -
+2026-05-05 21:39:02,980 - werkzeug - INFO - 127.0.0.1 - - [05/May/2026 21:39:02] "POST /chat HTTP/1.1" 200 -
+2026-05-05 21:39:02,986 - werkzeug - INFO - 127.0.0.1 - - [05/May/2026 21:39:02] "POST /chat HTTP/1.1" 200 -
+2026-05-05 21:53:56,230 - werkzeug - INFO -  * Detected change in 'F:\\Level 6\\GroupProject\\Backend\\app.py', reloading
+2026-05-05 21:53:57,050 - werkzeug - INFO -  * Restarting with stat
+2026-05-05 21:54:03,281 - werkzeug - WARNING -  * Debugger is active!
+2026-05-05 21:54:03,291 - werkzeug - INFO -  * Debugger PIN: 145-983-703
+2026-05-05 22:00:56,951 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-05 22:00:56,953 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-05-05 22:00:56,956 - werkzeug - INFO -  * Restarting with stat
+2026-05-05 22:00:59,624 - werkzeug - WARNING -  * Debugger is active!
+2026-05-05 22:00:59,628 - werkzeug - INFO -  * Debugger PIN: 145-983-703
+2026-05-05 22:01:33,282 - whatsapp_service - INFO - Sending text message to 94710958550
+2026-05-05 22:01:33,282 - whatsapp_service - INFO - [ATTEMPT 1] Sending message to 94710958550
+2026-05-05 22:01:35,312 - whatsapp_service - INFO - [SUCCESS] Text message sent successfully to 94710958550 on attempt 1
+2026-05-05 22:01:35,322 - werkzeug - INFO - 127.0.0.1 - - [05/May/2026 22:01:35] "POST /chat HTTP/1.1" 200 -
+2026-05-05 22:01:36,345 - werkzeug - INFO - 127.0.0.1 - - [05/May/2026 22:01:36] "POST /chat HTTP/1.1" 200 -
+2026-05-05 22:01:37,272 - werkzeug - INFO - 127.0.0.1 - - [05/May/2026 22:01:37] "POST /chat HTTP/1.1" 200 -
+2026-05-05 22:01:37,445 - werkzeug - INFO - 127.0.0.1 - - [05/May/2026 22:01:37] "POST /chat HTTP/1.1" 200 -
+2026-05-05 22:01:49,112 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2026-05-05 22:01:49,149 - whatsapp_service - INFO - Sending text message to 94710958550
+2026-05-05 22:01:49,154 - whatsapp_service - INFO - [ATTEMPT 1] Sending message to 94710958550
+2026-05-05 22:01:50,878 - whatsapp_service - INFO - [SUCCESS] Text message sent successfully to 94710958550 on attempt 1
+2026-05-05 22:01:51,881 - werkzeug - INFO - 127.0.0.1 - - [05/May/2026 22:01:51] "POST /chat HTTP/1.1" 200 -
+2026-05-05 22:01:52,103 - whatsapp_service - INFO - Sending text message to 94710958550
+2026-05-05 22:01:52,103 - whatsapp_service - INFO - [ATTEMPT 1] Sending message to 94710958550
+2026-05-05 22:01:52,119 - werkzeug - INFO - 127.0.0.1 - - [05/May/2026 22:01:52] "POST /chat HTTP/1.1" 200 -
+2026-05-05 22:01:53,868 - whatsapp_service - INFO - [SUCCESS] Text message sent successfully to 94710958550 on attempt 1
+2026-05-05 22:01:53,872 - werkzeug - INFO - 127.0.0.1 - - [05/May/2026 22:01:53] "POST /chat HTTP/1.1" 200 -
+2026-05-05 22:01:55,066 - werkzeug - INFO - 127.0.0.1 - - [05/May/2026 22:01:55] "POST /chat HTTP/1.1" 200 -
+2026-05-05 22:01:55,519 - werkzeug - INFO - 127.0.0.1 - - [05/May/2026 22:01:55] "POST /chat HTTP/1.1" 200 -
+2026-05-05 22:01:55,694 - werkzeug - INFO - 127.0.0.1 - - [05/May/2026 22:01:55] "POST /chat HTTP/1.1" 200 -
