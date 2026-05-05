@@ -9,11 +9,11 @@ from dotenv import load_dotenv
 from sendMessage import send_whatsapp_message
 
 # Telegram imports (new)
-from telegram.telegram_service import send_telegram_message, get_telegram_bot_info
+from telegram.telegram_service import send_telegram_message, get_telegram_bot_info, download_telegram_voice
 from telegram.telegram_webhook import TelegramWebhookHandler
 
 # AI service import (shared)
-from llama_ai.llama_service import get_llama_response
+from llama_ai.llama_service import get_llama_response, transcribe_voice
 
 load_dotenv()
 
@@ -119,17 +119,217 @@ def telegram_webhook():
             logger.info(f"Ignoring Telegram update {parsed_update.get('update_id')} - not addressed to bot")
             return jsonify({"status": "ignored", "reason": "Not addressed to bot"}), 200
         
-        # Extract user message
-        user_message = telegram_handler.extract_user_message(parsed_update)
-        
-        if not user_message:
-            logger.info(f"No message content in Telegram update {parsed_update.get('update_id')}")
-            return jsonify({"status": "ignored", "reason": "No message content"}), 200
-        
         # Get chat ID for response
         chat_id = parsed_update.get("chat_id")
         user_id = parsed_update.get("user_id")
         username = parsed_update.get("username", "Unknown")
+        
+        # Check for bot commands first (before extracting user message)
+        commands = parsed_update.get("commands", [])
+        if commands:
+            command = commands[0].get("command", "").lower()
+            
+            logger.info(f"Telegram command received from user {user_id} (@{username}): {command}")
+            
+            # Handle /start command
+            if command == "/start":
+                bot_reply = (
+                    "🎉 *Welcome to EchoTalk Chat Bot!*\n\n"
+                    "I'm here to help you with Hearing Impaired Assistance.\n\n"
+                    "📱 *Download EchoTalk App:*\n"
+                    "Get the full experience on your smartphone!\n"
+                    "[Download from Play Store](https://play.google.com/store/apps/test_url)\n\n"
+                    "💬 *Get Started:*\n"
+                    "Just send me a message and I'll respond!\n\n"
+                    "Need help? Type /help to learn more."
+                )
+                response_result = send_telegram_message(chat_id, bot_reply, parse_mode="Markdown")
+                
+                if response_result.get("success"):
+                    logger.info(f"Sent /start welcome message to chat {chat_id}")
+                    return jsonify({
+                        "status": "success", 
+                        "message": "Welcome message sent",
+                        "message_id": response_result.get("message_id")
+                    }), 200
+                else:
+                    logger.error(f"Failed to send /start message: {response_result.get('error')}")
+                    return jsonify({
+                        "status": "error", 
+                        "message": "Failed to send welcome message",
+                        "error": response_result.get("error")
+                    }), 500
+            
+            # Handle /help command
+            elif command == "/help":
+                bot_reply = (
+                    "ℹ️ *How to Use EchoTalk Bot*\n\n"
+                    "*What I Can Do:*\n"
+                    "• Answer your questions\n"
+                    "• Provide information and assistance\n"
+                    "• Help with hearing impaired accessibility\n\n"
+                    "*How to Chat:*\n"
+                    "1️⃣ Simply type your message and send it\n"
+                    "2️⃣ I'll process your message and respond\n"
+                    "3️⃣ Continue the conversation naturally\n\n"
+                    "*Example Messages:*\n"
+                    "• \"Hello, how are you?\"\n"
+                    "• \"Can you help me with...\"\n"
+                    "• \"Tell me about...\"\n\n"
+                    "*Available Commands:*\n"
+                    "/start - Show welcome message\n"
+                    "/help - Show this help message\n\n"
+                    "📱 *Download the App:*\n"
+                    "[Get EchoTalk on Play Store](https://play.google.com/store/apps/test_url)\n\n"
+                    "Ready to chat? Just send me a message! 💬"
+                )
+                response_result = send_telegram_message(chat_id, bot_reply, parse_mode="Markdown")
+                
+                if response_result.get("success"):
+                    logger.info(f"Sent /help message to chat {chat_id}")
+                    return jsonify({
+                        "status": "success", 
+                        "message": "Help message sent",
+                        "message_id": response_result.get("message_id")
+                    }), 200
+                else:
+                    logger.error(f"Failed to send /help message: {response_result.get('error')}")
+                    return jsonify({
+                        "status": "error", 
+                        "message": "Failed to send help message",
+                        "error": response_result.get("error")
+                    }), 500
+        
+        # ----------------------------------------------------------------
+        # Handle voice messages (recorded in-app, OGG/OPUS)
+        # ----------------------------------------------------------------
+        if parsed_update.get("message_type") == "voice":
+            voice_data = parsed_update.get("raw_message", {}).get("voice", {})
+            file_id = voice_data.get("file_id")
+            is_forwarded = parsed_update.get("is_forwarded", False)
+
+            if not file_id:
+                logger.warning("Voice message received but no file_id found")
+                send_telegram_message(chat_id, "⚠️ Sorry, I couldn't read your voice message.")
+                return jsonify({"status": "error", "reason": "No file_id in voice message"}), 200
+
+            logger.info(f"{'Forwarded v' if is_forwarded else 'V'}oice message from user {user_id}, file_id: {file_id}")
+
+            audio_bytes = download_telegram_voice(file_id)
+            if not audio_bytes:
+                logger.error(f"Failed to download voice file {file_id}")
+                send_telegram_message(chat_id, "⚠️ Sorry, I couldn't download your voice message. Please try again.")
+                return jsonify({"status": "error", "reason": "Voice download failed"}), 200
+
+            transcript = transcribe_voice(audio_bytes, filename="voice.ogg")
+            if not transcript:
+                logger.error("Transcription returned empty result")
+                send_telegram_message(chat_id, "⚠️ Sorry, I couldn't understand your voice message. Please try again or send a text message.")
+                return jsonify({"status": "error", "reason": "Transcription failed"}), 200
+
+            logger.info(f"Voice transcribed for user {user_id}: {transcript[:80]}")
+            prefix = "🔀 *Forwarded voice — I heard:*" if is_forwarded else "🎙️ *I heard:*"
+            bot_reply = f"{prefix} _{transcript}_"
+            response_result = send_telegram_message(chat_id, bot_reply, parse_mode="Markdown")
+
+            if response_result.get("success"):
+                logger.info(f"Sent voice transcript reply to chat {chat_id}")
+                return jsonify({"status": "success", "message": "Voice transcription sent", "transcript": transcript, "message_id": response_result.get("message_id")}), 200
+            else:
+                logger.error(f"Failed to send transcript reply: {response_result.get('error')}")
+                return jsonify({"status": "error", "message": "Failed to send transcript"}), 500
+
+        # ----------------------------------------------------------------
+        # Handle audio file attachments (MP3, M4A, WAV, etc.)
+        # ----------------------------------------------------------------
+        if parsed_update.get("message_type") == "audio":
+            audio_data = parsed_update.get("raw_message", {}).get("audio", {})
+            file_id = audio_data.get("file_id")
+            mime_type = audio_data.get("mime_type", "audio/mpeg")
+            file_name = audio_data.get("file_name", "audio.mp3")
+            is_forwarded = parsed_update.get("is_forwarded", False)
+
+            if not file_id:
+                logger.warning("Audio attachment received but no file_id found")
+                send_telegram_message(chat_id, "⚠️ Sorry, I couldn't read your audio file.")
+                return jsonify({"status": "error", "reason": "No file_id in audio message"}), 200
+
+            logger.info(f"{'Forwarded a' if is_forwarded else 'A'}udio file from user {user_id}: {file_name} ({mime_type}), file_id: {file_id}")
+
+            audio_bytes = download_telegram_voice(file_id)
+            if not audio_bytes:
+                logger.error(f"Failed to download audio file {file_id}")
+                send_telegram_message(chat_id, "⚠️ Sorry, I couldn't download your audio file. Please try again.")
+                return jsonify({"status": "error", "reason": "Audio download failed"}), 200
+
+            transcript = transcribe_voice(audio_bytes, filename=file_name)
+            if not transcript:
+                logger.error("Transcription of audio file returned empty result")
+                send_telegram_message(chat_id, "⚠️ Sorry, I couldn't transcribe your audio file. Supported formats: MP3, MP4, M4A, WAV, OGG, WEBM, FLAC.")
+                return jsonify({"status": "error", "reason": "Audio transcription failed"}), 200
+
+            logger.info(f"Audio file transcribed for user {user_id}: {transcript[:80]}")
+            prefix = "🔀 *Forwarded audio — Transcription:*" if is_forwarded else "🎵 *Transcription:*"
+            bot_reply = f"{prefix} _{transcript}_"
+            response_result = send_telegram_message(chat_id, bot_reply, parse_mode="Markdown")
+
+            if response_result.get("success"):
+                logger.info(f"Sent audio transcript reply to chat {chat_id}")
+                return jsonify({"status": "success", "message": "Audio transcription sent", "transcript": transcript, "message_id": response_result.get("message_id")}), 200
+            else:
+                logger.error(f"Failed to send audio transcript reply: {response_result.get('error')}")
+                return jsonify({"status": "error", "message": "Failed to send transcript"}), 500
+
+        # ----------------------------------------------------------------
+        # Handle video files and round video notes — transcribe audio track
+        # ----------------------------------------------------------------
+        if parsed_update.get("message_type") in ("video", "video_note"):
+            msg_type = parsed_update.get("message_type")
+            raw_key = "video_note" if msg_type == "video_note" else "video"
+            media_data = parsed_update.get("raw_message", {}).get(raw_key, {})
+            file_id = media_data.get("file_id")
+            file_name = media_data.get("file_name", "video.mp4")
+            is_forwarded = parsed_update.get("is_forwarded", False)
+
+            if not file_id:
+                logger.warning(f"{msg_type} received but no file_id found")
+                send_telegram_message(chat_id, "⚠️ Sorry, I couldn't read your video file.")
+                return jsonify({"status": "error", "reason": f"No file_id in {msg_type}"}), 200
+
+            logger.info(f"{'Forwarded ' if is_forwarded else ''}{msg_type} from user {user_id}, file_id: {file_id}")
+
+            audio_bytes = download_telegram_voice(file_id)
+            if not audio_bytes:
+                logger.error(f"Failed to download {msg_type} file {file_id}")
+                send_telegram_message(chat_id, "⚠️ Sorry, I couldn't download your video. Please try again.")
+                return jsonify({"status": "error", "reason": f"{msg_type} download failed"}), 200
+
+            transcript = transcribe_voice(audio_bytes, filename=file_name)
+            if not transcript:
+                logger.error(f"Transcription of {msg_type} returned empty result")
+                send_telegram_message(chat_id, "⚠️ Sorry, I couldn't transcribe the audio from your video. The video may have no speech or an unsupported format.")
+                return jsonify({"status": "error", "reason": f"{msg_type} transcription failed"}), 200
+
+            logger.info(f"{msg_type} transcribed for user {user_id}: {transcript[:80]}")
+            fwd_label = "Forwarded video" if is_forwarded else "Video"
+            bot_reply = f"🎬 *{fwd_label} — I heard:* _{transcript}_"
+            response_result = send_telegram_message(chat_id, bot_reply, parse_mode="Markdown")
+
+            if response_result.get("success"):
+                logger.info(f"Sent {msg_type} transcript reply to chat {chat_id}")
+                return jsonify({"status": "success", "message": f"{msg_type} transcription sent", "transcript": transcript, "message_id": response_result.get("message_id")}), 200
+            else:
+                logger.error(f"Failed to send {msg_type} transcript reply: {response_result.get('error')}")
+                return jsonify({"status": "error", "message": "Failed to send transcript"}), 500
+
+        # ----------------------------------------------------------------
+        # Extract user message (for non-command, non-voice messages)
+        # ----------------------------------------------------------------
+        user_message = telegram_handler.extract_user_message(parsed_update)
+
+        if not user_message:
+            logger.info(f"No message content in Telegram update {parsed_update.get('update_id')}")
+            return jsonify({"status": "ignored", "reason": "No message content"}), 200
         
         logger.info(f"Telegram message received from user {user_id} (@{username}): {user_message}")
         

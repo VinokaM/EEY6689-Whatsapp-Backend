@@ -296,6 +296,54 @@ def send_telegram_photo(
     return {"error": "Failed to send photo after all retry attempts"}
 
 
+def download_telegram_voice(file_id: str) -> Optional[bytes]:
+    """
+    Download a voice message file from Telegram servers.
+
+    Flow:
+      1. Call getFile with file_id  →  get file_path
+      2. Download the actual OGG bytes from the Telegram file CDN
+
+    Args:
+        file_id: Telegram file_id from the voice message object
+
+    Returns:
+        Raw audio bytes (OGG/OPUS), or None on failure
+    """
+
+    if not TELEGRAM_BOT_TOKEN:
+        logger.error("TELEGRAM_BOT_TOKEN not set — cannot download voice file")
+        return None
+
+    try:
+        # Step 1: resolve file_id → file_path
+        get_file_resp = requests.get(
+            f"{TELEGRAM_API_BASE_URL}/getFile",
+            params={"file_id": file_id},
+            timeout=10,
+        )
+        get_file_data = get_file_resp.json()
+
+        if not get_file_data.get("ok"):
+            logger.error(f"getFile failed: {get_file_data}")
+            return None
+
+        file_path = get_file_data["result"]["file_path"]
+        logger.info(f"Resolved voice file_id to path: {file_path}")
+
+        # Step 2: download the actual bytes
+        download_url = f"https://api.telegram.org/file/bot{TELEGRAM_BOT_TOKEN}/{file_path}"
+        audio_resp = requests.get(download_url, timeout=30)
+        audio_resp.raise_for_status()
+
+        logger.info(f"Downloaded voice file: {len(audio_resp.content)} bytes")
+        return audio_resp.content
+
+    except Exception as e:
+        logger.error(f"Failed to download voice file {file_id}: {str(e)}")
+        return None
+
+
 def get_telegram_bot_info() -> Dict[str, Any]:
     """
     Get basic information about the bot.

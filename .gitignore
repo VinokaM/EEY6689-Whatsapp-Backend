@@ -1,5 +1,15 @@
+.kiro
 venv/
 __pycache__/
 *.pyc
 .env
 *.log
+
+# Test coverage reports
+htmlcov/
+.coverage
+coverage.xml
+coverage.json
+.pytest_cache/
+test-results.xml
+local_doc

@@ -1,0 +1,128 @@
+{
+  "private_text_message": {
+    "update_id": 123456789,
+    "message": {
+      "message_id": 1,
+      "from": {
+        "id": 987654321,
+        "is_bot": false,
+        "first_name": "John",
+        "last_name": "Doe",
+        "username": "johndoe",
+        "language_code": "en"
+      },
+      "chat": {
+        "id": 987654321,
+        "first_name": "John",
+        "last_name": "Doe",
+        "username": "johndoe",
+        "type": "private"
+      },
+      "date": 1234567890,
+      "text": "Hello bot"
+    }
+  },
+  "group_message_with_mention": {
+    "update_id": 123456790,
+    "message": {
+      "message_id": 2,
+      "from": {
+        "id": 111111111,
+        "is_bot": false,
+        "first_name": "Alice",
+        "username": "alice"
+      },
+      "chat": {
+        "id": -100123456789,
+        "title": "Test Group",
+        "type": "supergroup"
+      },
+      "date": 1234567891,
+      "text": "@testbot Hello from group",
+      "entities": [
+        {
+          "offset": 0,
+          "length": 8,
+          "type": "mention"
+        }
+      ]
+    }
+  },
+  "photo_message": {
+    "update_id": 123456791,
+    "message": {
+      "message_id": 3,
+      "from": {
+        "id": 987654321,
+        "is_bot": false,
+        "first_name": "John",
+        "username": "johndoe"
+      },
+      "chat": {
+        "id": 987654321,
+        "type": "private"
+      },
+      "date": 1234567892,
+      "photo": [
+        {
+          "file_id": "photo_file_id_001",
+          "file_unique_id": "unique_001",
+          "width": 320,
+          "height": 240,
+          "file_size": 12345
+        }
+      ],
+      "caption": "Check this out"
+    }
+  },
+  "start_command": {
+    "update_id": 123456792,
+    "message": {
+      "message_id": 4,
+      "from": {
+        "id": 987654321,
+        "is_bot": false,
+        "first_name": "John",
+        "username": "johndoe"
+      },
+      "chat": {
+        "id": 987654321,
+        "type": "private"
+      },
+      "date": 1234567893,
+      "text": "/start",
+      "entities": [
+        {
+          "offset": 0,
+          "length": 6,
+          "type": "bot_command"
+        }
+      ]
+    }
+  },
+  "help_command": {
+    "update_id": 123456793,
+    "message": {
+      "message_id": 5,
+      "from": {
+        "id": 987654321,
+        "is_bot": false,
+        "first_name": "John",
+        "username": "johndoe"
+      },
+      "chat": {
+        "id": 987654321,
+        "type": "private"
+      },
+      "date": 1234567894,
+      "text": "/help",
+      "entities": [
+        {
+          "offset": 0,
+          "length": 5,
+          "type": "bot_command"
+        }
+      ]
+    }
+  }
+}
