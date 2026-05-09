@@ -52,6 +52,53 @@ def verify():
 #     return send_whatsapp_message(phone_number, bot_reply)
 
 
+# @app.route("/chat", methods=["POST"])
+# def chat():
+#     incoming_data = request.json
+
+#     try:
+#         changes = incoming_data["entry"][0]["changes"][0]["value"]
+#         messages = changes.get("messages")
+#         if not messages or len(messages) == 0:
+#             return jsonify({"status": "ignored", "reason": "No message received"}), 200
+
+#         message = messages[0]
+#         phone_number = message["from"]
+#         message_type = message.get("type")  # "text" or "audio"
+
+#         # ---- TEXT MESSAGE ----
+#         if message_type == "text":
+#             user_message = message["text"]["body"]
+#             print(f"Text Message: {user_message}")
+
+#         # ---- VOICE MESSAGE ----
+#         elif message_type == "audio":
+#             media_id = message["audio"]["id"]
+#             print(f"Voice message received, transcribing...")
+            
+#             user_message = transcribe_voice(media_id)
+            
+#             if not user_message:
+#                 return send_whatsapp_message(phone_number, 
+#                     "Sorry, I could not understand your voice message. Please try again.")
+            
+#             print(f"Transcribed: {user_message}")
+#             # Optional - send transcribed text back to user
+#             send_whatsapp_message(phone_number, f"🎤 I heard: {user_message}")
+
+#         else:
+#             return jsonify({"status": "ignored", "reason": "Unsupported message type"}), 200
+
+#     except (KeyError, IndexError) as e:
+#         print(f"Error: {e}")
+#         return jsonify({"status": "ignored", "reason": "Non-message webhook"}), 200
+
+#     # ---- Get AI Response ----
+#     bot_reply = get_llama_response(user_message)
+#     print(f"Bot Reply: {bot_reply}")
+
+#     return send_whatsapp_message(phone_number, bot_reply)
+
 @app.route("/chat", methods=["POST"])
 def chat():
     incoming_data = request.json
@@ -64,27 +111,32 @@ def chat():
 
         message = messages[0]
         phone_number = message["from"]
-        message_type = message.get("type")  # "text" or "audio"
+        message_type = message.get("type")
 
         # ---- TEXT MESSAGE ----
         if message_type == "text":
             user_message = message["text"]["body"]
             print(f"Text Message: {user_message}")
 
+            # Get AI response and reply
+            bot_reply = get_llama_response(user_message)
+            print(f"Bot Reply: {bot_reply}")
+            return send_whatsapp_message(phone_number, bot_reply)
+
         # ---- VOICE MESSAGE ----
         elif message_type == "audio":
             media_id = message["audio"]["id"]
             print(f"Voice message received, transcribing...")
-            
-            user_message = transcribe_voice(media_id)
-            
-            if not user_message:
-                return send_whatsapp_message(phone_number, 
+
+            transcribed_text = transcribe_voice(media_id)
+
+            if not transcribed_text:
+                return send_whatsapp_message(phone_number,
                     "Sorry, I could not understand your voice message. Please try again.")
+
+            print(f"Transcribed: {transcribed_text}")
             
-            print(f"Transcribed: {user_message}")
-            # Optional - send transcribed text back to user
-            send_whatsapp_message(phone_number, f"🎤 I heard: {user_message}")
+            return send_whatsapp_message(phone_number, f"🎤 I heard: {transcribed_text}")
 
         else:
             return jsonify({"status": "ignored", "reason": "Unsupported message type"}), 200
@@ -92,12 +144,6 @@ def chat():
     except (KeyError, IndexError) as e:
         print(f"Error: {e}")
         return jsonify({"status": "ignored", "reason": "Non-message webhook"}), 200
-
-    # ---- Get AI Response ----
-    bot_reply = get_llama_response(user_message)
-    print(f"Bot Reply: {bot_reply}")
-
-    return send_whatsapp_message(phone_number, bot_reply)
 
 @app.route("/")
 def home():

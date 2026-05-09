@@ -170,3 +170,149 @@
 2026-05-05 22:01:55,066 - werkzeug - INFO - 127.0.0.1 - - [05/May/2026 22:01:55] "POST /chat HTTP/1.1" 200 -
 2026-05-05 22:01:55,519 - werkzeug - INFO - 127.0.0.1 - - [05/May/2026 22:01:55] "POST /chat HTTP/1.1" 200 -
 2026-05-05 22:01:55,694 - werkzeug - INFO - 127.0.0.1 - - [05/May/2026 22:01:55] "POST /chat HTTP/1.1" 200 -
+2026-05-05 22:04:33,632 - werkzeug - INFO -  * Detected change in 'F:\\Level 6\\GroupProject\\Backend\\app.py', reloading
+2026-05-05 22:04:33,919 - werkzeug - INFO -  * Restarting with stat
+2026-05-05 22:04:37,434 - werkzeug - WARNING -  * Debugger is active!
+2026-05-05 22:04:37,440 - werkzeug - INFO -  * Debugger PIN: 145-983-703
+2026-05-05 22:04:59,403 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2026-05-05 22:04:59,409 - whatsapp_service - INFO - Sending text message to 94710958550
+2026-05-05 22:04:59,410 - whatsapp_service - INFO - [ATTEMPT 1] Sending message to 94710958550
+2026-05-05 22:05:01,359 - whatsapp_service - INFO - [SUCCESS] Text message sent successfully to 94710958550 on attempt 1
+2026-05-05 22:05:01,514 - werkzeug - INFO - 127.0.0.1 - - [05/May/2026 22:05:01] "[35m[1mPOST /chat HTTP/1.1[0m" 500 -
+2026-05-05 22:05:02,449 - werkzeug - INFO - 127.0.0.1 - - [05/May/2026 22:05:02] "POST /chat HTTP/1.1" 200 -
+2026-05-05 22:05:03,082 - werkzeug - INFO - 127.0.0.1 - - [05/May/2026 22:05:03] "POST /chat HTTP/1.1" 200 -
+2026-05-05 22:05:03,154 - werkzeug - INFO - 127.0.0.1 - - [05/May/2026 22:05:03] "POST /chat HTTP/1.1" 200 -
+2026-05-05 22:05:11,170 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2026-05-05 22:05:11,175 - whatsapp_service - INFO - Sending text message to 94710958550
+2026-05-05 22:05:11,177 - whatsapp_service - INFO - [ATTEMPT 1] Sending message to 94710958550
+2026-05-05 22:05:12,809 - whatsapp_service - INFO - [SUCCESS] Text message sent successfully to 94710958550 on attempt 1
+2026-05-05 22:05:12,856 - werkzeug - INFO - 127.0.0.1 - - [05/May/2026 22:05:12] "[35m[1mPOST /chat HTTP/1.1[0m" 500 -
+2026-05-05 22:05:13,868 - werkzeug - INFO - 127.0.0.1 - - [05/May/2026 22:05:13] "POST /chat HTTP/1.1" 200 -
+2026-05-05 22:05:14,317 - werkzeug - INFO - 127.0.0.1 - - [05/May/2026 22:05:14] "POST /chat HTTP/1.1" 200 -
+2026-05-05 22:05:14,524 - werkzeug - INFO - 127.0.0.1 - - [05/May/2026 22:05:14] "POST /chat HTTP/1.1" 200 -
+2026-05-05 22:05:18,932 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2026-05-05 22:05:18,938 - whatsapp_service - INFO - Sending text message to 94710958550
+2026-05-05 22:05:18,938 - whatsapp_service - INFO - [ATTEMPT 1] Sending message to 94710958550
+2026-05-05 22:05:20,695 - whatsapp_service - INFO - [SUCCESS] Text message sent successfully to 94710958550 on attempt 1
+2026-05-05 22:05:20,731 - werkzeug - INFO - 127.0.0.1 - - [05/May/2026 22:05:20] "[35m[1mPOST /chat HTTP/1.1[0m" 500 -
+2026-05-05 22:05:21,747 - werkzeug - INFO - 127.0.0.1 - - [05/May/2026 22:05:21] "POST /chat HTTP/1.1" 200 -
+2026-05-05 22:05:22,045 - werkzeug - INFO - 127.0.0.1 - - [05/May/2026 22:05:22] "POST /chat HTTP/1.1" 200 -
+2026-05-05 22:05:26,566 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2026-05-05 22:05:26,571 - whatsapp_service - INFO - Sending text message to 94710958550
+2026-05-05 22:05:26,573 - whatsapp_service - INFO - [ATTEMPT 1] Sending message to 94710958550
+2026-05-05 22:05:28,191 - whatsapp_service - INFO - [SUCCESS] Text message sent successfully to 94710958550 on attempt 1
+2026-05-05 22:05:28,231 - werkzeug - INFO - 127.0.0.1 - - [05/May/2026 22:05:28] "[35m[1mPOST /chat HTTP/1.1[0m" 500 -
+2026-05-05 22:05:29,470 - werkzeug - INFO - 127.0.0.1 - - [05/May/2026 22:05:29] "POST /chat HTTP/1.1" 200 -
+2026-05-05 22:05:29,720 - werkzeug - INFO - 127.0.0.1 - - [05/May/2026 22:05:29] "POST /chat HTTP/1.1" 200 -
+2026-05-05 22:05:29,951 - werkzeug - INFO - 127.0.0.1 - - [05/May/2026 22:05:29] "POST /chat HTTP/1.1" 200 -
+2026-05-05 22:05:36,917 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2026-05-05 22:05:36,921 - whatsapp_service - INFO - Sending text message to 94710958550
+2026-05-05 22:05:36,924 - whatsapp_service - INFO - [ATTEMPT 1] Sending message to 94710958550
+2026-05-05 22:05:38,416 - whatsapp_service - INFO - [SUCCESS] Text message sent successfully to 94710958550 on attempt 1
+2026-05-05 22:05:38,436 - werkzeug - INFO - 127.0.0.1 - - [05/May/2026 22:05:38] "[35m[1mPOST /chat HTTP/1.1[0m" 500 -
+2026-05-05 22:05:39,569 - werkzeug - INFO - 127.0.0.1 - - [05/May/2026 22:05:39] "POST /chat HTTP/1.1" 200 -
+2026-05-05 22:05:39,997 - werkzeug - INFO - 127.0.0.1 - - [05/May/2026 22:05:39] "POST /chat HTTP/1.1" 200 -
+2026-05-05 22:05:40,047 - werkzeug - INFO - 127.0.0.1 - - [05/May/2026 22:05:40] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:51:39,395 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-09 21:51:39,409 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-05-09 21:51:39,425 - werkzeug - INFO -  * Restarting with stat
+2026-05-09 21:51:43,826 - werkzeug - WARNING -  * Debugger is active!
+2026-05-09 21:51:43,836 - werkzeug - INFO -  * Debugger PIN: 145-983-703
+2026-05-09 21:52:30,435 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:52:30] "GET /chat?hub.mode=subscribe&hub.challenge=143882329&hub.verify_token=Vinopoor1214&hub_mode=subscribe&hub_challenge=143882329&hub_verify_token=Vinopoor1214 HTTP/1.1" 200 -
+2026-05-09 21:52:55,972 - whatsapp_service - INFO - Sending text message to 94710958550
+2026-05-09 21:52:55,972 - whatsapp_service - INFO - [ATTEMPT 1] Sending message to 94710958550
+2026-05-09 21:52:58,223 - whatsapp_service - INFO - [SUCCESS] Text message sent successfully to 94710958550 on attempt 1
+2026-05-09 21:52:58,233 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:52:58] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:52:59,181 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:52:59] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:52:59,548 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:52:59] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:52:59,711 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:52:59] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:52:59,776 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:52:59] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:53:21,057 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2026-05-09 21:53:21,079 - whatsapp_service - INFO - Sending text message to 94710958550
+2026-05-09 21:53:21,082 - whatsapp_service - INFO - [ATTEMPT 1] Sending message to 94710958550
+2026-05-09 21:53:23,306 - whatsapp_service - INFO - [SUCCESS] Text message sent successfully to 94710958550 on attempt 1
+2026-05-09 21:53:24,337 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:53:24] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:53:24,466 - whatsapp_service - INFO - Sending text message to 94710958550
+2026-05-09 21:53:24,470 - whatsapp_service - INFO - [ATTEMPT 1] Sending message to 94710958550
+2026-05-09 21:53:24,617 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:53:24] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:53:25,208 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:53:25] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:53:26,282 - whatsapp_service - INFO - [SUCCESS] Text message sent successfully to 94710958550 on attempt 1
+2026-05-09 21:53:26,286 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:53:26] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:53:27,281 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:53:27] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:53:27,731 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:53:27] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:53:27,780 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:53:27] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:53:27,831 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:53:27] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:53:42,672 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2026-05-09 21:53:42,690 - whatsapp_service - INFO - Sending text message to 94710958550
+2026-05-09 21:53:42,700 - whatsapp_service - INFO - [ATTEMPT 1] Sending message to 94710958550
+2026-05-09 21:53:44,902 - whatsapp_service - INFO - [SUCCESS] Text message sent successfully to 94710958550 on attempt 1
+2026-05-09 21:53:45,887 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:53:45] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:53:46,058 - whatsapp_service - INFO - Sending text message to 94710958550
+2026-05-09 21:53:46,058 - whatsapp_service - INFO - [ATTEMPT 1] Sending message to 94710958550
+2026-05-09 21:53:46,310 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:53:46] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:53:46,421 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:53:46] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:53:46,441 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:53:46] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:53:47,772 - whatsapp_service - INFO - [SUCCESS] Text message sent successfully to 94710958550 on attempt 1
+2026-05-09 21:53:47,787 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:53:47] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:53:48,767 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:53:48] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:53:49,041 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:53:49] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:53:49,455 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:53:49] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:54:40,341 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:54:40] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:55:11,131 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:55:11] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:55:35,287 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:55:35] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:57:15,634 - werkzeug - INFO -  * Detected change in 'F:\\Level 6\\GroupProject\\Backend\\app.py', reloading
+2026-05-09 21:57:15,911 - werkzeug - INFO -  * Restarting with stat
+2026-05-09 21:57:20,671 - werkzeug - WARNING -  * Debugger is active!
+2026-05-09 21:57:20,685 - werkzeug - INFO -  * Debugger PIN: 145-983-703
+2026-05-09 21:57:20,741 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:57:20] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:57:29,394 - whatsapp_service - INFO - Sending text message to 94710958550
+2026-05-09 21:57:29,394 - whatsapp_service - INFO - [ATTEMPT 1] Sending message to 94710958550
+2026-05-09 21:57:31,671 - whatsapp_service - INFO - [SUCCESS] Text message sent successfully to 94710958550 on attempt 1
+2026-05-09 21:57:31,679 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:57:31] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:57:32,721 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:57:32] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:57:33,212 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:57:33] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:57:33,220 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:57:33] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:57:33,338 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:57:33] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:57:42,682 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:57:42] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:57:43,368 - whatsapp_service - INFO - Sending text message to 94710958550
+2026-05-09 21:57:43,371 - whatsapp_service - INFO - [ATTEMPT 1] Sending message to 94710958550
+2026-05-09 21:57:45,526 - whatsapp_service - INFO - [SUCCESS] Text message sent successfully to 94710958550 on attempt 1
+2026-05-09 21:57:45,528 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:57:45] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:57:46,429 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:57:46] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:57:46,891 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:57:46] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:57:47,202 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:57:47] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:57:59,097 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2026-05-09 21:57:59,100 - whatsapp_service - INFO - Sending text message to 94710958550
+2026-05-09 21:57:59,101 - whatsapp_service - INFO - [ATTEMPT 1] Sending message to 94710958550
+2026-05-09 21:58:01,951 - whatsapp_service - INFO - [SUCCESS] Text message sent successfully to 94710958550 on attempt 1
+2026-05-09 21:58:01,955 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:58:01] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:58:02,888 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:58:02] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:58:03,290 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:58:03] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:58:03,745 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:58:03] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:58:03,816 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:58:03] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:58:18,776 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2026-05-09 21:58:18,783 - whatsapp_service - INFO - Sending text message to 94710958550
+2026-05-09 21:58:18,784 - whatsapp_service - INFO - [ATTEMPT 1] Sending message to 94710958550
+2026-05-09 21:58:20,883 - whatsapp_service - INFO - [SUCCESS] Text message sent successfully to 94710958550 on attempt 1
+2026-05-09 21:58:20,886 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:58:20] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:58:21,890 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:58:21] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:58:22,240 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:58:22] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:58:22,303 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:58:22] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:58:22,357 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:58:22] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:58:33,938 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2026-05-09 21:58:33,941 - whatsapp_service - INFO - Sending text message to 94710958550
+2026-05-09 21:58:33,941 - whatsapp_service - INFO - [ATTEMPT 1] Sending message to 94710958550
+2026-05-09 21:58:35,925 - whatsapp_service - INFO - [SUCCESS] Text message sent successfully to 94710958550 on attempt 1
+2026-05-09 21:58:35,933 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:58:35] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:58:37,056 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:58:37] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:58:37,527 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:58:37] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:58:37,614 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:58:37] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:58:48,000 - whatsapp_service - INFO - Sending text message to 94710958550
+2026-05-09 21:58:48,003 - whatsapp_service - INFO - [ATTEMPT 1] Sending message to 94710958550
+2026-05-09 21:58:49,783 - whatsapp_service - INFO - [SUCCESS] Text message sent successfully to 94710958550 on attempt 1
+2026-05-09 21:58:49,786 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:58:49] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:58:50,839 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:58:50] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:58:51,234 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:58:51] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:58:51,297 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:58:51] "POST /chat HTTP/1.1" 200 -
+2026-05-09 21:58:51,342 - werkzeug - INFO - 127.0.0.1 - - [09/May/2026 21:58:51] "POST /chat HTTP/1.1" 200 -
