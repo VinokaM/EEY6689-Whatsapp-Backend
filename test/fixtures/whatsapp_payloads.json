@@ -1,0 +1,61 @@
+{
+  "valid_text_message": {
+    "object": "whatsapp_business_account",
+    "entry": [
+      {
+        "id": "entry_id_001",
+        "changes": [
+          {
+            "value": {
+              "messaging_product": "whatsapp",
+              "metadata": {
+                "display_phone_number": "1234567890",
+                "phone_number_id": "phone_id_001"
+              },
+              "contacts": [
+                {
+                  "profile": { "name": "Test User" },
+                  "wa_id": "1234567890"
+                }
+              ],
+              "messages": [
+                {
+                  "from": "1234567890",
+                  "id": "msg_001",
+                  "timestamp": "1234567890",
+                  "text": { "body": "Hello bot" },
+                  "type": "text"
+                }
+              ]
+            },
+            "field": "messages"
+          }
+        ]
+      }
+    ]
+  },
+  "empty_messages_array": {
+    "object": "whatsapp_business_account",
+    "entry": [
+      {
+        "id": "entry_id_002",
+        "changes": [
+          {
+            "value": {
+              "messaging_product": "whatsapp",
+              "messages": []
+            },
+            "field": "messages"
+          }
+        ]
+      }
+    ]
+  },
+  "missing_entry_field": {
+    "object": "whatsapp_business_account"
+  },
+  "malformed_structure": {
+    "unexpected_key": "unexpected_value",
+    "data": null
+  }
+}

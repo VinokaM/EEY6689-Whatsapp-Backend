@@ -1,0 +1,76 @@
+[run]
+# Source paths to measure coverage
+source = .
+
+# Patterns to omit from coverage measurement
+omit =
+    */tests/*
+    */test/*
+    test_*.py
+    */__pycache__/*
+    */venv/*
+    */env/*
+    */.venv/*
+    */site-packages/*
+    setup.py
+    conftest.py
+    telegram_setup.py
+
+# Enable branch coverage
+branch = True
+
+[report]
+# Reporting precision
+precision = 2
+
+# Show lines that weren't executed
+show_missing = True
+
+# Don't skip files with 100% coverage
+skip_covered = False
+
+# Skip empty files
+skip_empty = True
+
+# Lines to exclude from coverage reporting
+exclude_lines =
+    # Standard pragma
+    pragma: no cover
+    
+    # Don't complain about missing debug code
+    def __repr__
+    def __str__
+    
+    # Don't complain if tests don't hit defensive assertion code
+    raise AssertionError
+    raise NotImplementedError
+    
+    # Don't complain if non-runnable code isn't run
+    if __name__ == .__main__.:
+    if TYPE_CHECKING:
+    
+    # Don't complain about abstract methods
+    @abstractmethod
+    @abc.abstractmethod
+    
+    # Don't complain about pass statements
+    pass
+
+# Sort report by coverage percentage
+sort = Cover
+
+[html]
+# HTML report output directory
+directory = htmlcov
+
+# Title for HTML report
+title = Chatbot Backend Test Coverage Report
+
+[xml]
+# XML report output file
+output = coverage.xml
+
+[json]
+# JSON report output file
+output = coverage.json
+pretty_print = True
