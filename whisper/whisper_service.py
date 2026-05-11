@@ -26,7 +26,7 @@ def download_voice_message(media_id):
     
     return audio_path
 
-def transcribe_voice(media_id):
+def transcribe_voicew(media_id):
     """Download and transcribe voice message using Groq Whisper v3"""
     try:
         # Download voice file
