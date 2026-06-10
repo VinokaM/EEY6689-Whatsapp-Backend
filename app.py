@@ -173,6 +173,33 @@ def chat():
     except (KeyError, IndexError) as e:
         print(f"Error: {e}")
         return jsonify({"status": "ignored", "reason": "Non-message webhook"}), 200
+    
+
+@app.route("/webhook/new-user", methods=["POST"])
+def new_user_welcome():
+    """Supabase webhook endpoint - triggers welcome message on new user registration"""
+    try:
+        incoming_data = request.json
+        new_user = incoming_data.get("record", {})
+        
+        # Get phone number from supabase record
+        # phone_number = new_user.get("phone_number", "94710958550")  # fallback for testing
+
+        phone_number = "94710958550"
+        
+        welcome_message = (
+            "👋 Welcome to *EchoTalk!*\n\n"
+            "I'm your personal assistant 🤖\n\n"
+            "You can send me anything you face problems with regarding *hearing* and I'll be happy to help you.\n\n"
+            "🎤 You can also forward *voice messages* and I will translate them to text for you!\n\n"
+            "Let's get started — feel free to send your first message! 😊"
+        )
+        
+        return send_whatsapp_message(phone_number, welcome_message)
+
+    except Exception as e:
+        print(f"Welcome webhook error: {e}")
+        return jsonify({"status": "error", "reason": str(e)}), 500
 
 # ============================================================================
 # TELEGRAM ENDPOINTS (NEW)
