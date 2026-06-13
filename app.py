@@ -31,6 +31,7 @@ VERIFY_TOKEN = os.getenv('VERIFY_TOKEN')
 # Telegram configuration (new)
 TELEGRAM_BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
 TELEGRAM_WEBHOOK_SECRET = os.getenv('TELEGRAM_WEBHOOK_SECRET')
+TELEGRAM_OWNER_CHAT_ID = os.getenv('TELEGRAM_OWNER_CHAT_ID')  # Your personal chat ID with the bot
 
 # Initialize Telegram webhook handler
 telegram_handler = TelegramWebhookHandler(TELEGRAM_WEBHOOK_SECRET)
@@ -177,16 +178,28 @@ def chat():
 
 @app.route("/webhook/new-user", methods=["POST"])
 def new_user_welcome():
-    """Supabase webhook endpoint - triggers welcome message on new user registration"""
+    """Supabase webhook endpoint - triggers welcome message on new user registration.
+    
+    Sends the welcome message simultaneously on both WhatsApp and Telegram.
+    A failure on one platform does not block the other.
+    """
     try:
         incoming_data = request.json
         new_user = incoming_data.get("record", {})
-        
-        # Get phone number from supabase record
-        # phone_number = new_user.get("phone_number", "94710958550")  # fallback for testing
 
-        phone_number = "94710958550"
-        
+        # ----------------------------------------------------------------
+        # Resolve identifiers
+        # ----------------------------------------------------------------
+        # WhatsApp: phone number from Supabase record (fallback to hardcoded for testing)
+        phone_number = new_user.get("phone_number", "94710958550")
+
+        # Telegram: owner chat_id from env (your personal chat with the bot)
+        telegram_chat_id = os.getenv("TELEGRAM_OWNER_CHAT_ID")
+
+        # ----------------------------------------------------------------
+        # Welcome message — *bold* syntax works for both WhatsApp and
+        # Telegram (Markdown mode), so we reuse the exact same string.
+        # ----------------------------------------------------------------
         welcome_message = (
             "👋 Welcome to *EchoTalk!*\n\n"
             "I'm your personal assistant 🤖\n\n"
@@ -194,11 +207,65 @@ def new_user_welcome():
             "🎤 You can also forward *voice messages* and I will translate them to text for you!\n\n"
             "Let's get started — feel free to send your first message! 😊"
         )
-        
-        return send_whatsapp_message(phone_number, welcome_message)
+
+        results = {}
+
+        # ----------------------------------------------------------------
+        # 1. Send via WhatsApp
+        # ----------------------------------------------------------------
+        try:
+            wa_result = send_whatsapp_message(phone_number, welcome_message)
+            if isinstance(wa_result, dict) and wa_result.get("error"):
+                logger.error(f"WhatsApp welcome failed for {phone_number}: {wa_result['error']}")
+                results["whatsapp"] = {"status": "error", "reason": wa_result["error"]}
+            else:
+                logger.info(f"WhatsApp welcome sent to {phone_number}")
+                results["whatsapp"] = {"status": "success", "phone": phone_number}
+        except Exception as wa_exc:
+            logger.error(f"WhatsApp welcome exception for {phone_number}: {wa_exc}")
+            results["whatsapp"] = {"status": "error", "reason": str(wa_exc)}
+
+        # ----------------------------------------------------------------
+        # 2. Send via Telegram
+        # ----------------------------------------------------------------
+        if telegram_chat_id:
+            try:
+                tg_result = send_telegram_message(
+                    chat_id=telegram_chat_id,
+                    message=welcome_message,
+                    parse_mode="Markdown"
+                )
+                if tg_result.get("success"):
+                    logger.info(f"Telegram welcome sent to chat_id {telegram_chat_id}")
+                    results["telegram"] = {
+                        "status": "success",
+                        "chat_id": telegram_chat_id,
+                        "message_id": tg_result.get("message_id")
+                    }
+                else:
+                    logger.error(f"Telegram welcome failed for chat_id {telegram_chat_id}: {tg_result.get('error')}")
+                    results["telegram"] = {"status": "error", "reason": tg_result.get("error")}
+            except Exception as tg_exc:
+                logger.error(f"Telegram welcome exception for chat_id {telegram_chat_id}: {tg_exc}")
+                results["telegram"] = {"status": "error", "reason": str(tg_exc)}
+        else:
+            logger.warning("TELEGRAM_OWNER_CHAT_ID not set — skipping Telegram welcome")
+            results["telegram"] = {"status": "skipped", "reason": "TELEGRAM_OWNER_CHAT_ID not configured"}
+
+        # ----------------------------------------------------------------
+        # Return a combined result — succeed as long as at least one
+        # platform delivered the message successfully.
+        # ----------------------------------------------------------------
+        any_success = any(r.get("status") == "success" for r in results.values())
+        http_status = 200 if any_success else 500
+
+        return jsonify({
+            "status": "success" if any_success else "error",
+            "platforms": results
+        }), http_status
 
     except Exception as e:
-        print(f"Welcome webhook error: {e}")
+        logger.error(f"Welcome webhook error: {e}")
         return jsonify({"status": "error", "reason": str(e)}), 500
 
 # ============================================================================
