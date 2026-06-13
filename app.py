@@ -40,10 +40,7 @@ telegram_handler = TelegramWebhookHandler(TELEGRAM_WEBHOOK_SECRET)
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# ============================================================================
-# WHATSAPP ENDPOINTS (UNCHANGED)
-# ============================================================================
-
+# WHATSAPP ENDPOINTS
 @app.route("/chat", methods=["GET"])
 def verify():
     """WhatsApp webhook verification endpoint"""
@@ -187,19 +184,16 @@ def new_user_welcome():
         incoming_data = request.json
         new_user = incoming_data.get("record", {})
 
-        # ----------------------------------------------------------------
         # Resolve identifiers
-        # ----------------------------------------------------------------
         # WhatsApp: phone number from Supabase record (fallback to hardcoded for testing)
         phone_number = new_user.get("phone_number", "94710958550")
 
         # Telegram: owner chat_id from env (your personal chat with the bot)
         telegram_chat_id = os.getenv("TELEGRAM_OWNER_CHAT_ID")
 
-        # ----------------------------------------------------------------
-        # Welcome message — *bold* syntax works for both WhatsApp and
-        # Telegram (Markdown mode), so we reuse the exact same string.
-        # ----------------------------------------------------------------
+
+        # Welcome message — syntax works for both WhatsApp and
+        # Telegram (Markdown mode), reuse the exact same string.
         welcome_message = (
             "👋 Welcome to *EchoTalk!*\n\n"
             "I'm your personal assistant 🤖\n\n"
@@ -210,9 +204,7 @@ def new_user_welcome():
 
         results = {}
 
-        # ----------------------------------------------------------------
         # 1. Send via WhatsApp
-        # ----------------------------------------------------------------
         try:
             wa_result = send_whatsapp_message(phone_number, welcome_message)
             if isinstance(wa_result, dict) and wa_result.get("error"):
@@ -225,9 +217,7 @@ def new_user_welcome():
             logger.error(f"WhatsApp welcome exception for {phone_number}: {wa_exc}")
             results["whatsapp"] = {"status": "error", "reason": str(wa_exc)}
 
-        # ----------------------------------------------------------------
         # 2. Send via Telegram
-        # ----------------------------------------------------------------
         if telegram_chat_id:
             try:
                 tg_result = send_telegram_message(
@@ -252,10 +242,9 @@ def new_user_welcome():
             logger.warning("TELEGRAM_OWNER_CHAT_ID not set — skipping Telegram welcome")
             results["telegram"] = {"status": "skipped", "reason": "TELEGRAM_OWNER_CHAT_ID not configured"}
 
-        # ----------------------------------------------------------------
+      
         # Return a combined result — succeed as long as at least one
         # platform delivered the message successfully.
-        # ----------------------------------------------------------------
         any_success = any(r.get("status") == "success" for r in results.values())
         http_status = 200 if any_success else 500
 
@@ -267,11 +256,8 @@ def new_user_welcome():
     except Exception as e:
         logger.error(f"Welcome webhook error: {e}")
         return jsonify({"status": "error", "reason": str(e)}), 500
-
-# ============================================================================
-# TELEGRAM ENDPOINTS (NEW)
-# ============================================================================
-
+    
+# TELEGRAM ENDPOINTS
 @app.route("/telegram", methods=["POST"])
 def telegram_webhook():
     """Telegram webhook endpoint for receiving updates"""
@@ -392,9 +378,7 @@ def telegram_webhook():
                         "error": response_result.get("error")
                     }), 500
         
-        # ----------------------------------------------------------------
         # Handle voice messages (recorded in-app, OGG/OPUS)
-        # ----------------------------------------------------------------
         if parsed_update.get("message_type") == "voice":
             voice_data = parsed_update.get("raw_message", {}).get("voice", {})
             file_id = voice_data.get("file_id")
@@ -431,9 +415,7 @@ def telegram_webhook():
                 logger.error(f"Failed to send transcript reply: {response_result.get('error')}")
                 return jsonify({"status": "error", "message": "Failed to send transcript"}), 500
 
-        # ----------------------------------------------------------------
         # Handle audio file attachments (MP3, M4A, WAV, etc.)
-        # ----------------------------------------------------------------
         if parsed_update.get("message_type") == "audio":
             audio_data = parsed_update.get("raw_message", {}).get("audio", {})
             file_id = audio_data.get("file_id")
@@ -472,9 +454,7 @@ def telegram_webhook():
                 logger.error(f"Failed to send audio transcript reply: {response_result.get('error')}")
                 return jsonify({"status": "error", "message": "Failed to send transcript"}), 500
 
-        # ----------------------------------------------------------------
         # Handle video files and round video notes — transcribe audio track
-        # ----------------------------------------------------------------
         if parsed_update.get("message_type") in ("video", "video_note"):
             msg_type = parsed_update.get("message_type")
             raw_key = "video_note" if msg_type == "video_note" else "video"
@@ -514,9 +494,7 @@ def telegram_webhook():
                 logger.error(f"Failed to send {msg_type} transcript reply: {response_result.get('error')}")
                 return jsonify({"status": "error", "message": "Failed to send transcript"}), 500
 
-        # ----------------------------------------------------------------
         # Extract user message (for non-command, non-voice messages)
-        # ----------------------------------------------------------------
         user_message = telegram_handler.extract_user_message(parsed_update)
 
         if not user_message:
@@ -602,11 +580,7 @@ def set_telegram_webhook():
         }), 500
 
 
-# ============================================================================
 # SHARED ENDPOINTS
-# ============================================================================
-
-
 @app.route("/")
 def home():
     """Health check endpoint"""
